@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Raleway" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
+    <title>NewsReact</title>
+  </head>
+  <body>
+      
+   <nav>
+     <p id="menu">Menu <i class="fa fa-bars" aria-hidden="true"></i></p>
+    <ul>
+      <p id="powered">NewsReact - Powered By News API </p>
+      <li class="list"><a href="/">Search News</a><span class="line"></span></li>
+      <li class="list"><a href="/news">Latest News</a><span class="line"></span></li>
+      <li class="list"><a href="/business">Business</a><span class="line"></span></li>
+      <li class="list"><a href="/fame">Fame</a><span class="line"></span></li>
+      <li class="list"><a href="/games">Games</a><span class="line"></span></li>
+      <li class="list"><a href="/sports">Sports</a><span class="line"></span></li>
+      <li class="list"><a href="/tech">Tech</a><span class="line"></span></li>
+    </ul>
+   </nav> 
+  <header class="header">
+    <h1>NewsReact</h1>
+  </header>  
+  <div class="quote"><p>News API is a simple and easy-to-use API that returns JSON metadata for the headlines currently published on a range of news sources and blogs</p>
+  </div>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function(){
+
+
+    
+
+      $(window).on("resize", ()=>{
+        if(window.innerWidth < 650){
+        $("#menu").next("UL").hide();
+      }else{
+        $("#menu").next("UL").show();
+      }
+
+
+      });
+      
+      $("body").on("mouseover", ".list", (e)=>{
+          let $this= $(e.target);
+         $this.next(".line").css({
+            "width": "100%"
+          });
+      });
+
+          
+      $("body").on("mouseleave", ".list", (e)=>{
+          let $this= $(e.target);
+          //to avoid the bug of having one
+          //line still displaying 
+          //just fall all .line back to 0
+          $(".line").css({
+            "width": "0px"
+          });
+      });
+
+
+    
+
+    });
+    
+    </script>
+
+  
+
+  </body>
+</html>
