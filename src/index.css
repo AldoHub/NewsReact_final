@@ -145,8 +145,12 @@ nav ul li a {
   margin: 0;
   color: #eee;
   display: inline-table;
+  font-weight: bold;
   }
+#powered a {
+  color: #eee;
 
+}
 
 .search{
  margin-bottom: 40px;
