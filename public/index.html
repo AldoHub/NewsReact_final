@@ -10,9 +10,6 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Raleway" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
     
     <title>NewsReact</title>
   </head>
@@ -40,49 +37,7 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-    <script>
-    $(function(){
-
-
-    
-
-      $(window).on("resize", ()=>{
-        if(window.innerWidth < 650){
-        $("#menu").next("UL").hide();
-      }else{
-        $("#menu").next("UL").show();
-      }
-
-
-      });
-      
-      $("body").on("mouseover", ".list", (e)=>{
-          let $this= $(e.target);
-         $this.next(".line").css({
-            "width": "100%"
-          });
-      });
-
-          
-      $("body").on("mouseleave", ".list", (e)=>{
-          let $this= $(e.target);
-          //to avoid the bug of having one
-          //line still displaying 
-          //just fall all .line back to 0
-          $(".line").css({
-            "width": "0px"
-          });
-      });
-
-
-    
-
-    });
-    
+  
     </script>
 
   

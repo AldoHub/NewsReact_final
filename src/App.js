@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from "jquery";
+
 // components
 import News from "./components/news";
 import Business from "./components/business";
@@ -20,31 +21,60 @@ import AwesomeComponent from "./components/loader";
 
 class App extends Component {
 
-  componentDidMount=()=>{
+componentDidMount=()=>{
 
-    
-     $("body").on("click", "#menu" , (e)=>{
-       let $this= $(e.target);
-       $this.next("UL").slideToggle();
-     });
-     
-     
+  
 
-    //after the component is mounted check the size of the window
-    //and react upon that, top show or hide the menu 
-    
+  $(window).on("resize", ()=>{
     if(window.innerWidth < 650){
-         
-      $("#menu").next("UL").hide();
-    }else{
-      $("#menu").next("UL").show();
-    }
+    $("#menu").next("UL").hide();
+  }else{
+    $("#menu").next("UL").show();
+  }
+
+
+  });
   
+  $("body").on("mouseover", ".list", (e)=>{
+      let $this= $(e.target);
+     $this.next(".line").css({
+        "width": "100%"
+      });
+  });
 
-
-  } 
-
+      
+  $("body").on("mouseleave", ".list", (e)=>{
   
+      //to avoid the bug of having one
+      //line still displaying 
+      //just fall all .line back to 0
+      $(".line").css({
+        "width": "0px"
+      });
+  });
+
+
+   
+ $("body").on("click", "#menu" , (e)=>{
+   let $this= $(e.target);
+   $this.next("UL").slideToggle();
+ });
+ 
+ 
+
+//after the component is mounted check the size of the window
+//and react upon that, top show or hide the menu 
+
+if(window.innerWidth < 650){
+     
+  $("#menu").next("UL").hide();
+}else{
+  $("#menu").next("UL").show();
+}
+
+
+
+} 
 
   render() {
   

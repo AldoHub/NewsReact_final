@@ -1,3 +1,7 @@
+@import "https://fonts.googleapis.com/css?family=Lora|Raleway";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+
 body {
   margin: 0;
   background: #111;
@@ -17,6 +21,7 @@ body {
 .react-spinners--climbing-box{
 position: fixed;
 width: 100%;
+z-index:99;
 top: 50vh;
 }
 
