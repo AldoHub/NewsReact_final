@@ -1,7 +1,6 @@
-@import "https://fonts.googleapis.com/css?family=Lora|Raleway";
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
-
+@import url('https://fonts.googleapis.com/css?family=Lora|Raleway');
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
   margin: 0;
   background: #111;
@@ -21,7 +20,6 @@ body {
 .react-spinners--climbing-box{
 position: fixed;
 width: 100%;
-z-index:99;
 top: 50vh;
 }
 
@@ -136,21 +134,16 @@ nav ul li a {
   text-align: center;
   margin: 0;
   color: #444;
-  
-  cursor: pointer;
+   cursor: pointer;
 }
 
-#powered{
+#powered, #powered a{
   padding: 5px;
   margin: 0;
   color: #eee;
   display: inline-table;
-  font-weight: bold;
   }
-#powered a {
-  color: #eee;
 
-}
 
 .search{
  margin-bottom: 40px;
@@ -246,9 +239,7 @@ padding: 0;
    
   }
  
-  #menu{
-    display: block;
-  }
+
   h1 {
       font-size: 20px;
   }
@@ -256,7 +247,11 @@ padding: 0;
     width: 85%;
     margin-bottom: 5px; 
   }
- 
+
+  #menu {
+    padding: 15px 0;
+    display: block;
+  }
 
 nav ul li {
   display: block;
@@ -264,6 +259,11 @@ nav ul li {
   margin: 0;
   border-top:1px solid #111;
 }
+
+nav ul li a {
+  padding: 18px 0;
+}
+
   nav ul li a:hover{
     background:  #11CC91;
     color: #111;
