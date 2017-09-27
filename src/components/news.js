@@ -14,8 +14,10 @@ class News extends Component {
 
   render() {
     return (
+      <div className="outer">
+      <h1>Latest News (Reuters)</h1>
       <div className="news">
-        <h1>Latest News (Reuters)</h1>
+        
             <div>{this.props.recentNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
@@ -31,11 +33,13 @@ class News extends Component {
                         </div>
                                             
                         <p className="articleDesc"> {article.description}</p>
-                      </div>
+                        <p><a className="go" target="_blank" href={article.url}>Read Note</a></p>
+                        </div>
                   </div>
                 )
                 })}</div>
               
+      </div>
       </div>
     );
   }

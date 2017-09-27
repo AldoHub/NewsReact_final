@@ -23,16 +23,21 @@ width: 100%;
 top: 50vh;
 }
 
+.outer{
+  text-align: center;
+}
+
 .spinner {
   background:url("https://cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif")center no-repeat #fff; 
   top:0;
   height: 100%;
   position:fixed;
+  z-index: 99;
   width: 100%;
 }
 
 nav{
-  background: #222;
+  background: #000;
   padding: 0;
   text-align: center;
   position: fixed;
@@ -40,7 +45,7 @@ nav{
 }
 
 nav ul {
-  background: rgba(30,30,30,0.9);
+  background: rgba(30,30,30,1);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -49,7 +54,7 @@ nav ul {
 }
 
 nav ul:hover {
-  background: #222;
+  background: #000;
 }
 
 nav ul li {
@@ -82,9 +87,9 @@ nav ul li a {
 }
 
 .news {
-  text-align: center;
-  padding: 0;
-
+  column-count:3 ;
+  column-gap: 10px;
+column-rule: 1px solid #222;
 }
 .quote {
   background: #222;
@@ -93,9 +98,9 @@ nav ul li a {
   color: #555;
 }
 .article {
+  text-align: center;
   padding: 10px;
-  width: 30%;
-  max-width:350px;
+  width: 90%;
   background: #222;
   margin: 5px;
   color: #999;
@@ -133,7 +138,7 @@ nav ul li a {
   display: none;
   text-align: center;
   margin: 0;
-  color: #444;
+  color: #eee;
    cursor: pointer;
 }
 
@@ -190,14 +195,37 @@ padding: 0;
   text-align: justify;
 }
 
+footer p {
+  border-top:1px solid #222;
+  padding-top: 10px;
+  text-align: center;
+color: #222;
+}
 
-@media (min-width:650px) and (max-width: 950px){
+.go {
+  border: 1px solid #CC3112;
+  padding: 10px;
+  display: block;
+  color: #CC3112;
+  text-decoration: none;
+transition: all 0.200s ease-in-out;
+}
+
+.go:hover {
+  background: #CC3112;
+  color: #eee;
+}
+
+@media (min-width:650px) and (max-width: 960px){
  #powered{
    display: block;
   border-bottom:1px solid #111;
   }
 
-  
+.news {
+  column-count: 3;  
+  column-gap: 1px;
+}  
 
   .header {
     height:40vh;
@@ -212,19 +240,79 @@ padding: 0;
 
   .article {
     
-    width: 40%;
+    width: 80%;
   
      
   }
 
+ 
 
 }
 
-@media (min-width: 0px) and (max-width: 649px){
-  nav ul:hover {
-    background:rgba(20,20,20,0.9) ;
+@media (min-width: 481px) and (max-width: 649px){
+ 
+  .header {
+   height: 40vh;
   }
+ 
+  #menu {
+    padding: 15px 0;
+    display: block;
+  }
+
+nav ul li {
+  display: block;
+  text-align: center;
+  margin: 0;
+  border-top:1px solid #111;
+}
+
+nav ul li a {
+  padding: 18px 0;
+}
+
+  nav ul li a:hover{
+    background:  #11CC91;
+    color: #111;
+  }
+
+  .news {
+    column-count: 2;
+    text-align: center;
+ 
+   }
+   .article {
+     width: 90%;
+   }
+}
+
+
+@media (min-width: 0px) and (max-width: 480px){
   
+  .header {
+    display: none;
+  }
+  .quote {
+    display: none;
+  }
+
+  nav ul:hover {
+    background:rgba(10,10,10,1) ;
+  }
+
+  .outer{
+    padding: 50px 10px;
+  }
+  .news {
+   column-count: 1;
+   text-align: center;
+
+  }
+ 
+  .news h1 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+  }
   #powered {
     text-align: center;
     display: block;
@@ -274,6 +362,9 @@ nav ul li a {
     width: 80%;
   }
   
+.articleTitle{
+  text-align: center;
+}
 
 
 }

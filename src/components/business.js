@@ -12,8 +12,10 @@ class Business extends Component {
  
   render() {
     return (
+  <div className="outer">
+    <h1>Latest News (Business Insider)</h1>
       <div className="news">
-        <h1>Latest News (Business Insider)</h1>
+        
         <div>{this.props.businessNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
@@ -28,11 +30,13 @@ class Business extends Component {
                         </div>
                                             
                         <p className="articleDesc"> {article.description}</p>
+                        <p><a className="go" target="_blank" href={article.url}>Read Note</a></p>
                       </div>
                   </div>
                 )
                 })}</div>
       </div>
+    </div>            
     );
   }
 }

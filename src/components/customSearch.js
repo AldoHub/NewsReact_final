@@ -44,9 +44,9 @@ class CustomSearch extends Component {
  
   render() {
     return (
-      <div className="news">
-        <h1>Seach News.</h1>
-        <p>Select a source and a relevance to search for news </p>
+<div className="outer">   
+<h1>Seach News.</h1>     
+<p>Select a source and a relevance to search for news </p>
         <div>
            <p className="note">Some sources only have "latest" relevance news, if the server does not respond
                with a set of news for "top", try setting the relevance to "latest".</p>
@@ -60,6 +60,8 @@ class CustomSearch extends Component {
             </select>
            <button id="searchButton">Search </button>
         </div>
+      <div className="news">
+             
             <div>{this.props.customNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
@@ -75,12 +77,14 @@ class CustomSearch extends Component {
                         </div>
                                             
                         <p className="articleDesc"> {article.description}</p>
-                      </div>
+                        <p><a className="go" target="_blank" href={article.url}>Read Note</a></p>
+                        </div>
                   </div>
                 )
                 })}</div>
         </div>
       </div>
+</div>
     );
   }
 }

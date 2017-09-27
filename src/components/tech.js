@@ -14,8 +14,10 @@ class Tech extends Component {
 
   render() {
     return (
-      <div className="news">
+      <div className="outer">
         <h1>Latest News (The Verge)</h1>
+      <div className="news">
+        
         <div>{this.props.recentTechNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
@@ -30,11 +32,13 @@ class Tech extends Component {
                         </div>
                                             
                         <p className="articleDesc"> {article.description}</p>
-                      </div>
+                        <p><a className="go" target="_blank" href={article.url}>Read Note</a></p>
+                        </div>
                   </div>
                 )
                 })}</div>
           
+      </div>
       </div>
     );
   }
