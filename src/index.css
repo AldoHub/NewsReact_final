@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lora|Raleway');
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
 body {
   margin: 0;
   background: #111;
@@ -9,7 +11,7 @@ body {
   font-family: "raleway", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .header {
-  background: url("https://static.pexels.com/photos/373965/pexels-photo-373965.jpeg");
+  background: url("./pexels-photo-373965.jpeg");
   height:70vh;
   background-size:100%;
 }
