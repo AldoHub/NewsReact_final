@@ -14,7 +14,7 @@ import Store from "./store/store";
 import {Provider} from "react-redux";
 
 //react router
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 
 import AwesomeComponent from "./components/loader";
@@ -74,10 +74,8 @@ componentDidMount=()=>{
   
     return (
     <Provider store={Store}>
-     
-      <BrowserRouter>   
-    
-        <div>
+
+          <div>
           <AwesomeComponent  />
           <Route exact path="/" component={CustomSearch} />
           <Route exact path="/news" component={News} />
@@ -86,10 +84,8 @@ componentDidMount=()=>{
           <Route exact path="/games" component={Games} />
           <Route exact path="/sports" component={Sports} />
           <Route exact path="/tech" component={Tech} />
-       
-        </div>
-      </BrowserRouter>
-       
+          </div>
+
     </Provider>
     );
   }
