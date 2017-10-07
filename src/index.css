@@ -46,16 +46,12 @@ nav{
 }
 
 nav ul {
-  background: rgba(30,30,30,1);
+  background: #222;
   margin: 0;
   padding: 0;
   width: 100%;
   position: absolute;
   z-index: 99;
-}
-
-nav ul:hover {
-  background: #000;
 }
 
 nav ul li {
@@ -269,11 +265,6 @@ nav ul li a {
   padding: 18px 0;
 }
 
-  nav ul li a:hover{
-    background:  #11CC91;
-    color: #111;
-  }
-
   .news {
     column-count: 2;
     text-align: center;
@@ -294,9 +285,6 @@ nav ul li a {
     display: none;
   }
 
-  nav ul:hover {
-    background:rgba(10,10,10,1) ;
-  }
 
   .outer{
     padding: 50px 10px;
@@ -335,8 +323,11 @@ nav ul li a {
   }
 
   #menu {
+    background: #222;
+    border-bottom: 1px solid #11CC91;
     padding: 15px 0;
     display: block;
+    color: #11CC91;
   }
 
 nav ul li {

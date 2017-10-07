@@ -23,7 +23,7 @@ class App extends Component {
 
 componentDidMount=()=>{
 
-      
+
   $("#menu").next("UL").show();
   
           $("body").on("mouseover", ".list", (e)=>{
@@ -48,25 +48,27 @@ componentDidMount=()=>{
   
         $("body").on("click", "#menu" , (e)=>{
           let $this= $(e.target);
+         
           $this.next("UL").slideToggle();
+          
         });
          
         
-        $("body").on("mouseleave", "nav", (e)=>{
-          let $this= $(e.target);
-          $("nav ul").slideUp();
-          });  
-
+        
      
 
 
 
 
   $(window).on("resize", ()=>{
+
     if(window.innerWidth < 650){
     $("#menu").next("UL").hide();
+
+
   }else{
     $("#menu").next("UL").show();
+   
   }
 
 
