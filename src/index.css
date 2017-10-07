@@ -250,6 +250,7 @@ transition: all 0.200s ease-in-out;
   }
  
   #menu {
+    background: #111;
     padding: 15px 0;
     display: block;
   }
