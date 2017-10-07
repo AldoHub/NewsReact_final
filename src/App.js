@@ -34,7 +34,7 @@ componentDidMount=()=>{
         });
       
             
-        $("body").on("mouseleave", ".list", (e)=>{
+          $("body").on("mouseleave", ".list", (e)=>{
         
             //to avoid the bug of having one
             //line still displaying 
@@ -43,14 +43,24 @@ componentDidMount=()=>{
               "width": "0px"
             });
         });
-  
+
         
   
         $("body").on("click", "#menu" , (e)=>{
           let $this= $(e.target);
           $this.next("UL").slideToggle();
         });
-                
+         
+        
+        $("body").on("mouseleave", "nav", (e)=>{
+          let $this= $(e.target);
+          $("nav ul").slideUp();
+          });  
+
+     
+
+
+
 
   $(window).on("resize", ()=>{
     if(window.innerWidth < 650){

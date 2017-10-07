@@ -10,7 +10,7 @@ body {
   font-family: "raleway", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .header {
-  background: url("./city.jpeg");
+  background: url("./city-min.png");
   height:70vh;
   background-size:100%;
 }
@@ -89,8 +89,8 @@ nav ul li a {
 
 .news {
   column-count:3 ;
-  column-gap: 10px;
-column-rule: 1px solid #222;
+  column-gap: 0px;
+
 }
 .quote {
   background: #222;
@@ -223,10 +223,7 @@ transition: all 0.200s ease-in-out;
   border-bottom:1px solid #111;
   }
 
-.news {
-  column-count: 3;  
-  column-gap: 1px;
-}  
+  
 
   .header {
     height:40vh;
