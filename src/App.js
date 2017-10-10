@@ -22,7 +22,12 @@ $("body").on("click", "#menu", ()=>{
 
 });
 
+$("body").on("dblclick", "#menu", ()=>{
+  $("#menu").next("UL").css({
+    "height": ""
+  });
 
+});
 
 $("body").on("mouseleave", ".links", ()=>{
   $("nav ul").css({
