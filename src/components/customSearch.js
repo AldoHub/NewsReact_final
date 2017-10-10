@@ -12,24 +12,20 @@ import $ from "jquery";
 class CustomSearch extends Component {
   componentDidMount=()=>{
     
-    $(window).on("load", ()=>{
-        $.ajax({
-            method: "GET",
-            url: "https://newsapi.org/v1/sources?"
-        }).then((response)=>{
-            //get the ids of all the sources in the api
-            //would need to loop to get the Id of the sources
+    $.ajax({
+        method: "GET",
+        url: "https://newsapi.org/v1/sources?"
+    }).then((response)=>{
+        //get the ids of all the sources in the api
+        //would need to loop to get the Id of the sources
+        
+        let $sources= response.sources;
+        $sources.forEach(function(source) {
+            $("#source").append("<option value='"+ source.id  +"'>"+  source.name +"</option>"); 
+        }, this);
             
-            let $sources= response.sources;
-            $sources.forEach(function(source) {
-                $("#source").append("<option value='"+ source.id  +"'>"+  source.name +"</option>"); 
-            }, this);
-                
 
-        });
-         
-    });
-    
+    });    
     
     
     //add the event click
