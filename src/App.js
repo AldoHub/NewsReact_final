@@ -17,22 +17,58 @@ class App extends Component {
 componentDidMount(){
 $("body").on("click", "#menu", ()=>{
   $("#menu").next("UL").css({
-    "height": "auto"
+    "height": "auto", 
+    "overflow": "visible"
   });
 
 });
 
-$("body").on("dblclick", "#menu", ()=>{
-  $("#menu").next("UL").css({
-    "height": ""
+
+
+$("body").on("click", ".small", ()=>{
+  $(".links").css({
+    "height": "0", 
+    "overflow": "hidden"
   });
 
 });
 
-$("body").on("mouseleave", ".links", ()=>{
-  $("nav ul").css({
-    "height": ""
-  });
+
+$(window).on("load", "#menu" , ()=>{
+  if(window.innerWidth > 650 ){
+
+    $("#menu").next("UL").css({
+      "height": "auto", 
+      "overflow": "visible"
+    });
+  }
+
+});
+
+$(window).on("resize", ()=>{
+  if(window.innerWidth > 650 ){
+    
+    $("nav ul li").removeClass("small");
+    $("#menu").next("UL").css({
+      "height": "auto", 
+      "overflow": "visible"
+    });
+  }else{
+    $("nav ul li").addClass("small");
+  }
+})
+
+
+$(window).on("load", "#menu" , ()=>{
+  if(window.innerWidth > 650 ){
+    $("nav ul li").removeClass("small");
+    $("#menu").next("UL").css({
+      "height": "auto", 
+      "overflow": "visible"
+    });
+  }else{
+    $("nav ul li").addClass("small");
+  }
 
 });
 
