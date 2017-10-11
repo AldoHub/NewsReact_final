@@ -23,6 +23,13 @@ $("body").on("click", "#menu", ()=>{
 
 });
 
+$("body").on("dblclick", "#menu", ()=>{
+  $("#menu").next("UL").css({
+    "height": "0", 
+    "overflow": "hidden"
+  });
+
+});
 
 
 $("body").on("click", ".small", ()=>{
