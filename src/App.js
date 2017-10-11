@@ -16,68 +16,34 @@ class App extends Component {
 
 componentDidMount(){
 $("body").on("click", "#menu", ()=>{
-  $("#menu").next("UL").css({
-    "height": "auto", 
-    "overflow": "visible"
-  });
-
-});
-
-$("body").on("dblclick", "#menu", ()=>{
-  $("#menu").next("UL").css({
-    "height": "0", 
-    "overflow": "hidden"
-  });
-
-});
-
-
-$("body").on("click", ".small", ()=>{
-  $(".links").css({
-    "height": "0", 
-    "overflow": "hidden"
-  });
+  $("#menu").next("UL").slideToggle();
 
 });
 
 
 $(window).on("load", "#menu" , ()=>{
-  if(window.innerWidth > 650 ){
+  if(window.innerWidth < 650 ){
 
-    $("#menu").next("UL").css({
-      "height": "auto", 
-      "overflow": "visible"
-    });
+    $("#menu").next("UL").slideUp();
+   
+  }else {
+    $("#menu").next("UL").slideDown();
+    
   }
 
 });
 
 $(window).on("resize", ()=>{
-  if(window.innerWidth > 650 ){
+  if(window.innerWidth < 650 ){
     
-    $("nav ul li").removeClass("small");
-    $("#menu").next("UL").css({
-      "height": "auto", 
-      "overflow": "visible"
-    });
+    $("#menu").next("UL").slideUp();
   }else{
-    $("nav ul li").addClass("small");
+    $("#menu").next("UL").slideDown();
   }
 })
 
 
-$(window).on("load", "#menu" , ()=>{
-  if(window.innerWidth > 650 ){
-    $("nav ul li").removeClass("small");
-    $("#menu").next("UL").css({
-      "height": "auto", 
-      "overflow": "visible"
-    });
-  }else{
-    $("nav ul li").addClass("small");
-  }
 
-});
 
 }
 
