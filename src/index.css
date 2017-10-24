@@ -159,7 +159,8 @@ nav ul li a {
 
 .search *{
   margin: 0 auto;
-  display: inline-table;
+   
+  
 }
 
 #source, #relevance {
