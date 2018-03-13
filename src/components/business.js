@@ -16,7 +16,7 @@ class Business extends Component {
     <h1>Latest News (Business Insider)</h1>
       <div className="news">
         
-        <div>{this.props.businessNews.map(article=>{
+        {this.props.businessNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
                     <div className="articleImg">
@@ -34,7 +34,7 @@ class Business extends Component {
                       </div>
                   </div>
                 )
-                })}</div>
+                })}
       </div>
     </div>            
     );

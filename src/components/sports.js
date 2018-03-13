@@ -16,7 +16,7 @@ class Sports extends Component {
          <h1>Latest News (ESPN)</h1>
       <div className="news">
        
-        <div>{this.props.sportsNews.map(article=>{
+       {this.props.sportsNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
                     <div className="articleImg">
@@ -35,7 +35,7 @@ class Sports extends Component {
                         </div>
                   </div>
                 )
-                })}</div>
+                })}
       </div>
       </div>
     );

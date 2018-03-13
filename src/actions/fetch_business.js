@@ -1,17 +1,13 @@
-import $ from "jquery";
+import axios from "axios";
 
 export function fetchBusiness(){
-    //return the actual action to do
     return function(dispatch){
-       
-       
-        $.ajax({
-            method: "GET",
-            url: "https://newsapi.org/v1/articles?source=business-insider&sortBy=top&apiKey=d2bd4483ceb44f01ae177734f4228c4e"
-        }).then((response)=>{
-            dispatch({type:"FETCH_BUSINESS", payload:response.articles});
-          
-        });
+        axios.get("https://newsapi.org/v1/articles?source=business-insider&sortBy=top&apiKey=d2bd4483ceb44f01ae177734f4228c4e").
+        then(response=>{
+            dispatch({type:"FETCH_BUSINESS", payload:response.data.articles});
+        }).catch(err=>{
+            console.log(err)
+        });     
  
    }
 }

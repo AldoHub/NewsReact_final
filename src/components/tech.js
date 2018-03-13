@@ -18,7 +18,7 @@ class Tech extends Component {
         <h1>Latest News (The Verge)</h1>
       <div className="news">
         
-        <div>{this.props.recentTechNews.map(article=>{
+        {this.props.recentTechNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
                     <div className="articleImg">
@@ -36,7 +36,7 @@ class Tech extends Component {
                         </div>
                   </div>
                 )
-                })}</div>
+                })}
           
       </div>
       </div>

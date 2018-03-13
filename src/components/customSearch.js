@@ -1,64 +1,101 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
-//actions
-import {customSearch} from "../actions/custom_search";
 
-//other
-import $ from "jquery";
-
+import axios from "axios";
 
 
 class CustomSearch extends Component {
-  componentDidMount=()=>{
-    
-    $.ajax({
-        method: "GET",
-        url: "https://newsapi.org/v1/sources?"
-    }).then((response)=>{
-        //get the ids of all the sources in the api
-        //would need to loop to get the Id of the sources
-        
-        let $sources= response.sources;
-        $sources.forEach(function(source) {
-            $("#source").append("<option value='"+ source.id  +"'>"+  source.name +"</option>"); 
-        }, this);
-            
 
+  constructor(props){
+      super(props);
+      this.state= {
+          arraySources : [],
+          searchValue : "",
+          searchRelevance: "",
+          customNews: []
+      }
+    
+  }  
+
+  componentWillMount= () => {
+    axios.get("https://newsapi.org/v1/sources?")
+    .then((response)=>{
+        let a = [];     
+        response.data.sources.map(source =>{
+          a.push(source);
+        });
+       this.setState({
+           arraySources : a
+       });
+    })
+    .catch(err =>{
+        console.log(err);
+    });
+  }
+
+  //manage the handler of the search name
+  changeHandlerName(e){
+    
+    this.setState({
+        searchValue: e.target.value
     });    
     
-    
-    //add the event click
-    //and bind the action to it  
-    $("body").on("click", "#searchButton", ()=>{
-       
-        this.props.CustomSearch();
-       
-    });
-    
   }
- 
+
+  //manage the handler of the search relevance
+  changeHandlerRelevance(e){
+    
+    this.setState({
+        searchValue: e.target.value
+    });    
+   
+  }
+
+searchHandler(){
+    let source = this.state.searchValue;
+    let relevance = this.state.relevance;
+    axios.get("https://newsapi.org/v1/articles?source="+ source+"&sortBy="+ relevance +"&apiKey=d2bd4483ceb44f01ae177734f4228c4e")
+    .then(response => {
+        this.setState({
+            customNews: response.data.articles
+        });
+    })
+    .catch(err => {
+        console.log(err);
+    });
+}
+
+
   render() {
     return (
 <div className="outer">   
 <h1>Seach News.</h1>     
-<p>Select a source and a relevance to search for news </p>
-        <div>
+        <div className="search-form">
+          <p>Select a source and a relevance to search for news </p>
            <p className="note">Some sources only have "latest" relevance news, if the server does not respond
                with a set of news for "top", try setting the relevance to "latest".</p>
         <div className="search">
-           <select id="source">
+           <select onChange={this.changeHandlerName.bind(this)} id="source">
                <option value="zero">Select an option...</option>
+              {
+                  this.state.arraySources.map(s =>{
+                      return(
+                        <option key={s.name} value={s.id}>{s.name}</option>
+                      )
+                  })
+                
+              }
            </select>
-           <select id="relevance">
+           <select onChange={this.changeHandlerRelevance.bind(this)} id="relevance">
                <option value="latest">Latest</option>
                <option value="top">Top</option>
             </select>
-           <button id="searchButton">Search </button>
+           <button id="searchButton" onClick={this.searchHandler.bind(this)}>Search </button>
         </div>
+        </div>  
       <div className="news">
-             
-            <div>{this.props.customNews.map(article=>{
+            {this.state.customNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
                     <div className="articleImg">
@@ -77,27 +114,17 @@ class CustomSearch extends Component {
                         </div>
                   </div>
                 )
-                })}</div>
+                })}
         </div>
-      </div>
+     
 </div>
     );
   }
 }
 
 
-function mapStateToProps(state){
-    return{
-     customNews: state.CustomSearch.customNews
-    }
-}
 
-
-function matchDispatchToProps(dispatch){
-    return bindActionCreators({CustomSearch:customSearch}, dispatch);
-}
-
-export default connect(mapStateToProps, matchDispatchToProps)(CustomSearch);
+export default CustomSearch;
 
 
 

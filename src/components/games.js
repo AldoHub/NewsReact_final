@@ -16,7 +16,7 @@ class Games extends Component {
       <h1>Latest News (Polygon)</h1>
       <div className="news">
       
-        <div>{this.props.recentGamesNews.map(article=>{
+       {this.props.recentGamesNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
                     <div className="articleImg">
@@ -34,7 +34,7 @@ class Games extends Component {
                         </div>
                   </div>
                 )
-                })}</div>
+                })}
       </div>
       </div>
     );

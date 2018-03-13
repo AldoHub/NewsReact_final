@@ -16,7 +16,7 @@ class Fame extends Component {
           <h1>Latest News (MTV News)</h1>
       <div className="news">
       
-        <div>{this.props.fameNews.map(article=>{
+        {this.props.fameNews.map(article=>{
                 return(
                   <div className="article" key={article.title}>
                     <div className="articleImg">
@@ -35,7 +35,7 @@ class Fame extends Component {
                         </div>
                   </div>
                 )
-                })}</div>
+                })}
 
       </div>
       </div>

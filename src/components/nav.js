@@ -4,11 +4,16 @@ import { NavLink } from 'react-router-dom'
 // The Header creates links that can be used to navigate
 // between routes.
 const Nav = () => (
-
+    
     <nav className="nav">
-      <p id="menu">Menu <span id="icon">&#9776;</span> </p>
+      <div id="nav-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <ul className="links">
-        <p id="powered">NewsReact - <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer">Powered By News API</a> </p>
+        <p>NewsReact</p>
+        
         <li className="small"><NavLink exact={true} to='/'>Home</NavLink></li>
         <li className="small"><NavLink exact={true} to='/news'>News</NavLink></li>
         <li className="small"><NavLink exact={true} to='/business'>Business</NavLink></li>
