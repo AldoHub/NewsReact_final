@@ -1,26 +1,32 @@
 
+html {
+  
+}
 body {
   margin: 0;
   background: #eee;
-  color: #222;
+  color: #fff;
   width: 100%;
   max-width: 1920px;
   padding: 0;
   font-family: Raleway, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ background: #222;
 }
 
 .header {
-  background: url("./pexels-photo-837500.jpeg")center;
-  height:50vh;
-  background-size:100%;
+  height:40vh;
+  background: #fd746c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ff9068, #fd746c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ff9068, #fd746c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 .header h1 {
  margin: 0 auto;
  width: 50%;
  text-align: center;
- padding-top: 7%;
+ padding-top: 5%;
  color: #fff;
- font-size: 7rem;
+ font-size: 9rem;
  animation: slide 0.400s ease-in-out;
  
 }
@@ -29,8 +35,8 @@ body {
   margin: 0 auto;
   width: 50%;
   text-align: center;
-  font-size: 2rem;
-  color: #fff;
+  font-size: 1.6rem;
+  color: #eee;
   display: block;
   animation: slide 0.900s ease-in-out;
 }
@@ -41,19 +47,19 @@ body {
   
 }
 .active {
-  background: #F26705;
+  background: #fd746c;
   color: #eee;
 }
 
 nav{
-  background: #fff;
+  background:#434343;
   padding: 0;
   text-align: center;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 99;
-  box-shadow: 0px 2px 20px #555;
+  box-shadow: 0px 2px 20px #2A2A2A;
 }
 
 nav ul {
@@ -74,18 +80,20 @@ nav ul li {
   position: relative; 
 }
 
+
 nav ul li a {
  text-decoration: none;
  padding: 10px;
  font-size: 3.2rem;
- color: #222;
+ color: #2A2A2A;
  display: block;
  
 }
 
 .links p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 10px 0;
+  color:#ff9068;
   margin: 0;
   text-align: left;
   text-indent: 10px;
@@ -117,20 +125,19 @@ nav ul li a {
   
 }
 .quote {
-  background: #fff;
+  background: #2A2A2A;
   padding: 5px 0;
   text-align: center;
-  color: #222;
 }
 .article {
   text-align: center;
   padding: 10px;
   width: 90%;
   margin: 0px;
-  background: #fff;
-  box-shadow: 0px 2px 10px #555;
-  color: #222;
+  background: #434343;
+  box-shadow: 0px 2px 10px #111;
   margin-top: 20px;
+  color: #fff;
   display: inline-table;
   animation: slide 0.600s ease-in-out;
    
@@ -157,6 +164,7 @@ nav ul li a {
 
 .articleImg img {
   width: 100%;
+  max-width: 500px;
 
 }
 
@@ -218,7 +226,7 @@ nav ul li a {
 .go {
   display: block;
   font-size: 2rem;
-  color: #CC3112;
+  color: #fd746c;
   text-decoration: none;
   transition: all 0.200s ease-in-out;
 }
@@ -251,7 +259,7 @@ nav ul li a {
   position: absolute;
   height: 3px;
   width: 100%;
-  background: #CC3112;
+  background: #fd746c;
   border-radius: 9px;
   opacity: 1;
   left: 0;

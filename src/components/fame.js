@@ -20,7 +20,7 @@ class Fame extends Component {
                 return(
                   <div className="article" key={article.title}>
                     <div className="articleImg">
-                       <a target="_blank" href={article.url}><img alt={article.title} src={article.urlToImage} /></a>
+                       <a target="_blank" href={article.url}  rel="noopener"><img alt={article.title} src={article.urlToImage} /></a>
                     </div>
                     <div className="articleData">  
                         <p className="articleTitle">{article.title}</p>
@@ -31,7 +31,7 @@ class Fame extends Component {
                         </div>
                                             
                         <p className="articleDesc"> {article.description}</p>
-                        <p><a className="go" target="_blank" href={article.url}>Read Note</a></p>
+                        <p><a className="go" target="_blank" href={article.url}  rel="noopener">Read Note</a></p>
                         </div>
                   </div>
                 )

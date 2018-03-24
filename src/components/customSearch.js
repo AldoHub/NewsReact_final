@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
-import { bindActionCreators } from 'redux';
-
 import axios from "axios";
 
 
@@ -21,10 +18,11 @@ class CustomSearch extends Component {
   componentWillMount= () => {
     axios.get("https://newsapi.org/v1/sources?")
     .then((response)=>{
-        let a = [];     
-        response.data.sources.map(source =>{
-          a.push(source);
-        });
+        let a = []; 
+        response.data.sources.forEach(function(element) {
+            a.push(element);
+        }, this);   
+     
        this.setState({
            arraySources : a
        });
@@ -99,7 +97,7 @@ searchHandler(){
                 return(
                   <div className="article" key={article.title}>
                     <div className="articleImg">
-                       <a target="_blank" href={article.url}><img alt={article.title} src={article.urlToImage} /></a>
+                       <a target="_blank" href={article.url}  rel="noopener"><img alt={article.title} src={article.urlToImage} /></a>
                     </div>
                     <div className="articleData">  
                         <p className="articleTitle">{article.title}</p>
@@ -110,7 +108,7 @@ searchHandler(){
                         </div>
                                             
                         <p className="articleDesc"> {article.description}</p>
-                        <p><a className="go" target="_blank" href={article.url}>Read Note</a></p>
+                        <p><a className="go" target="_blank" href={article.url} rel="noopener">Read Note</a></p>
                         </div>
                   </div>
                 )
