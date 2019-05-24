@@ -1,14 +1,27 @@
-$(function(){
-  
-    $("#nav-icon").on("click", function(e){
-        e.stopPropagation();
-        $(this).toggleClass("open");
-        $("nav ul li").slideToggle();
+document.addEventListener("DOMContentLoaded", e => {
 
-    });
+    let menu = document.getElementById("menu");
+    let links = document.getElementsByClassName("links")[0];
+    let bool = false;
+   
+    menu.addEventListener("click", e => {
+        
+        if(!bool){
+            bool = true;
+            links.classList.add("full")
+        }else{
+            bool = false;
+            links.classList.remove("full");
+        }
+    
+    })
 
-  
+})
+
  
-});
+
+
+
+
 
   

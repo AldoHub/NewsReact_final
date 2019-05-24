@@ -6,14 +6,15 @@ import { NavLink } from 'react-router-dom'
 const Nav = () => (
     
     <nav className="nav">
-      <div id="nav-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <ul>
+        <li><NavLink exact={true} to='/'>NewsReact</NavLink></li>
+      </ul>
+   
+      <ul id="menu">
+        <li><button>&#8801;</button></li>
+      </ul>
+
       <ul className="links">
-        <p>NewsReact</p>
-        
         <li className="small"><NavLink exact={true} to='/'>Home</NavLink></li>
         <li className="small"><NavLink exact={true} to='/news'>News</NavLink></li>
         <li className="small"><NavLink exact={true} to='/business'>Business</NavLink></li>
