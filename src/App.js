@@ -20,7 +20,7 @@ render() {
                           
             <header className="header">
               <div>
-              <h1>NewsReact</h1>
+              <h1>News<br/>React</h1>
               
               <p> Powered By <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer">News API</a></p>
               </div>
